@@ -1,0 +1,124 @@
+{
+    "reviews": [
+      {
+        "professor": "Dr. Emily Thompson",
+        "subject": "Intro to Psychology",
+        "stars": 4,
+        "review": "Dr. Thompson is an excellent professor who really cares about her students. Her lectures are engaging and she is always available for extra help."
+      },
+      {
+        "professor": "Professor Michael Lee",
+        "subject": "Calculus I",
+        "stars": 3,
+        "review": "Professor Lee's class is challenging, but he does a good job of explaining the material. The workload is heavy, but you'll learn a lot."
+      },
+      {
+        "professor": "Dr. Samantha Nguyen",
+        "subject": "Organic Chemistry",
+        "stars": 2,
+        "review": "I would not recommend taking Dr. Nguyen's class. The material is difficult and she does not provide enough support for students struggling."
+      },
+      {
+        "professor": "Professor Sarah Wilson",
+        "subject": "Introduction to Programming",
+        "stars": 5,
+        "review": "Professor Wilson is an amazing teacher. Her lectures are clear and she is always willing to help students one-on-one. I learned a lot in her class."
+      },
+      {
+        "professor": "Dr. James Gonzalez",
+        "subject": "American History",
+        "stars": 4,
+        "review": "Dr. Gonzalez is a knowledgeable and engaging professor. His lectures are interesting and he encourages class discussion."
+      },
+      {
+        "professor": "Professor Lila Patel",
+        "subject": "Intro to Marketing",
+        "stars": 3,
+        "review": "Professor Patel's class is a lot of work, but you'll learn valuable skills. She is fair in her grading and provides helpful feedback."
+      },
+      {
+        "professor": "Dr. David Hernandez",
+        "subject": "Evolutionary Biology",
+        "stars": 4,
+        "review": "Dr. Hernandez is passionate about the subject and makes the material interesting. His exams are challenging but fair."
+      },
+      {
+        "professor": "Professor Olivia Ramirez",
+        "subject": "Principles of Management",
+        "stars": 5,
+        "review": "Professor Ramirez is an exceptional teacher. Her lectures are engaging and she provides lots of opportunities for hands-on learning."
+      },
+      {
+        "professor": "Dr. Aisha Khan",
+        "subject": "Comparative Politics",
+        "stars": 3,
+        "review": "Dr. Khan's class is interesting, but she can be disorganized at times. The workload is heavy and the grading is a bit subjective."
+      },
+      {
+        "professor": "Professor William Chen",
+        "subject": "Intro to Computer Science",
+        "stars": 5,
+        "review": "Professor Chen is an amazing teacher. His explanations are clear and he is always available to help students. I learned a ton in his class."
+      },
+      {
+        "professor": "Dr. Maria Fernandez",
+        "subject": "Spanish Language and Culture",
+        "stars": 4,
+        "review": "Dr. Fernandez is a passionate and engaging professor. Her class is challenging but rewarding, and she really helps students improve their language skills."
+      },
+      {
+        "professor": "Professor Ethan Kim",
+        "subject": "Principles of Economics",
+        "stars": 3,
+        "review": "Professor Kim's lectures can be dry at times, but he is knowledgeable about the subject matter. The class is a lot of work but valuable if you're interested in economics."
+      },
+      {
+        "professor": "Dr. Tanya Patel",
+        "subject": "Intro to Sociology",
+        "stars": 4,
+        "review": "Dr. Patel is a great professor who really cares about her students. Her lectures are interesting and she is always willing to discuss the material further during office hours."
+      },
+      {
+        "professor": "Professor Liam Rodriguez",
+        "subject": "Fundamentals of Engineering",
+        "stars": 5,
+        "review": "Professor Rodriguez is an excellent teacher who really knows his stuff. His classes are challenging but incredibly rewarding. I learned so much in his class."
+      },
+      {
+        "professor": "Dr. Ava Gonzalez",
+        "subject": "Intro to Philosophy",
+        "stars": 4,
+        "review": "Dr. Gonzalez is a passionate and engaging professor. Her lectures are thought-provoking and she encourages lively class discussions."
+      },
+      {
+        "professor": "Professor Ethan Patel",
+        "subject": "Principles of Finance",
+        "stars": 3,
+        "review": "Professor Patel's class is challenging, but he is a fair grader and provides helpful feedback. The workload is heavy, but you'll learn a lot."
+      },
+      {
+        "professor": "Dr. Isabella Rodriguez",
+        "subject": "Intro to Environmental Science",
+        "stars": 5,
+        "review": "Dr. Rodriguez is an amazing professor who really cares about her students and the environment. Her classes are engaging and informative."
+      },
+      {
+        "professor": "Professor Liam Nguyen",
+        "subject": "Principles of Marketing",
+        "stars": 4,
+        "review": "Professor Nguyen is a knowledgeable and engaging lecturer. His classes are interesting and he provides lots of opportunities for hands-on learning."
+      },
+      {
+        "professor": "Dr. Aiden Hernandez",
+        "subject": "Intro to Criminal Justice",
+        "stars": 3,
+        "review": "Dr. Hernandez's class is interesting, but he can be a bit disorganized at times. The workload is heavy and the grading is subjective."
+      },
+      {
+        "professor": "Professor Sophia Ramirez",
+        "subject": "Fundamentals of Accounting",
+        "stars": 4,
+        "review": "Professor Ramirez is a great teacher who really knows her stuff. Her lectures are clear and she provides lots of support for students."
+      }
+    ]
+  }
