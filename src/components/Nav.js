@@ -5,7 +5,6 @@ import { FcGraduationCap } from 'react-icons/fc';
 import Link from 'next/link';
 import Button from './Button';
 
-
 const Nav = () => {
 	const [open, setOpen] = useState(false);
 
@@ -33,12 +32,11 @@ const Nav = () => {
 						open ? 'block' : 'hidden'
 					}`}>
 					<div>
-						<Link href=''>
-							<Button/>
-							<button className='loginBtn'>Sign In</button>
+						<Link href='/signin'>
+							<Button value='Sign In' className='loginBtn' />
 						</Link>
-						<Link href=''>
-							<button className='signupBtn'>Sign Up</button>
+						<Link href='/signup'>
+							<Button value='Sign Up' className='signupBtn' />
 						</Link>
 					</div>
 				</nav>
