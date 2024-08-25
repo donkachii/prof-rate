@@ -15,11 +15,11 @@ const Loader = () => {
   return (
 		<>
 			{loader ? (
-				<main className='loader'>
+				<main className='loader text-center'>
 					<Hourglass
 						visible={true}
-						height='80'
-						width='80'
+						height='40'
+						width='40'
 						ariaLabel='hourglass-loading'
 						wrapperStyle={{}}
 						wrapperClass=''
@@ -27,7 +27,7 @@ const Loader = () => {
 					/>
 
 					<div className='text-white'>
-						<p className='lg:text-4xl font-bold'>Loading</p>
+						<p className='lg:text-2xl font-bold'>Loading</p>
 						<small className='lg:text-lg '>Please be patient...</small>
 					</div>
 				</main>

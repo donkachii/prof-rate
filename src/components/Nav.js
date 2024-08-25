@@ -3,6 +3,7 @@ import { FiMenu } from 'react-icons/fi';
 import { useState } from 'react';
 import { FcGraduationCap } from 'react-icons/fc';
 import Link from 'next/link';
+import Button from './Button';
 
 
 const Nav = () => {
@@ -33,6 +34,7 @@ const Nav = () => {
 					}`}>
 					<div>
 						<Link href=''>
+							<Button/>
 							<button className='loginBtn'>Sign In</button>
 						</Link>
 						<Link href=''>

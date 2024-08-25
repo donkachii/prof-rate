@@ -25,3 +25,45 @@
   @apply border-2 border-gray-500 text-white rounded-xl shadow-xl p-2 w-28;
   font-family: 'Pirata One', cursive;
 }
+/* ............................home.................. */
+.cover{
+  background-image: url('/cover.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+}
+/* ...............Home container.......... */
+.glass{
+  width:40%;
+  padding:30px 50px;
+  background: rgba(48, 30, 30, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
+  -webkit-backdrop-filter: blur( 2px );
+  backdrop-filter: blur( 2px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  @apply flex flex-col
+}
+.title{
+  @apply text-3xl;
+  font-family: 'Pinyon Script', cursive;
+}
+.description{
+  @apply text-xl leading-10 mb-3;
+  font-family: 'Pirata One', cursive;
+}
+.btnHero{
+  @apply bg-red-900 text-white p-2 rounded-lg;
+  width:250px;
+  font-family: 'Pirata One', cursive;
+}
+/* .............mobile screen............ */
+@media only screen and (max-width:600px){
+  .btnHero{
+    width:50%;
+    font-size:14px;
+  }
+}
+
