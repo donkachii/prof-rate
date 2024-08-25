@@ -1,7 +1,27 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Pirata+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Pinyon+Script&family=Tangerine:wght@700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
-
+/* ................................loader............... */
+.loader{
+  @apply flex flex-col justify-center items-center h-screen bg-gradient-to-tl from-gray-200 via-red-500 to-gray-200
+}
+/* ......................nav.................. */
+.navHead{
+  @apply flex items-center text-white cursor-pointer lg:text-3xl;
+  font-family:  'Pirata One', cursive;
+}
+.loginBtn{
+  @apply text-white mr-4 my-6 p-2;
+  font-family: 'Pirata One', cursive;
+}
+.signupBtn{
+  @apply border-2 border-gray-500 text-white rounded-xl shadow-xl p-2 w-28;
+  font-family: 'Pirata One', cursive;
+}
