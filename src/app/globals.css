@@ -47,8 +47,8 @@
   @apply flex flex-col
 }
 .title{
-  @apply text-3xl;
-  font-family: 'Pinyon Script', cursive;
+  @apply text-2xl font-bold;
+  
 }
 .description{
   @apply text-xl leading-10 mb-3;
