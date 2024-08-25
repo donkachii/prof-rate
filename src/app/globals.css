@@ -8,5 +8,5 @@
 }
 /* ................................loader............... */
 .loader{
-  @apply flex flex-col justify-center items-center h-screen bg-gradient-to-tl from-gray-200 via-red-700 to-gray-200
+  @apply flex flex-col justify-center items-center h-screen bg-gradient-to-tl from-gray-200 via-red-500 to-gray-200
 }
