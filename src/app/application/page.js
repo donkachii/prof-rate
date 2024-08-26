@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from '../page.module.css'
 import { useState } from 'react';
 import { Assistant } from 'next/font/google';
+import Nav from '@/components/Nav';
 
 const page = () => {
 	const [messages, setMessages] = useState([
@@ -57,84 +58,89 @@ const page = () => {
 		});
 	};
 	return (
-		<div
-			style={{
-				width: '100vw',
-				height: '100vh',
-				display: 'flex',
-				flexDirection: 'column',
-				justifyContent: 'center',
-				alignItems: 'center',
-			}}>
-			<div
-				style={{
-					width: '500px',
-					height: '700px',
-					border: '1px solid black',
-					padding: '16px',
-					display: 'flex',
-					flexDirection: 'column',
-					gap: '24px',
-				}}>
+		<>
+			<Nav/>
+			<div className="cover">
 				<div
 					style={{
-						flexGrow: 1,
-						overflowY: 'auto',
-						maxHeight: '100%',
+						width: '100vw',
+						height: '100vh',
 						display: 'flex',
 						flexDirection: 'column',
-						gap: '16px',
+						justifyContent: 'center',
+						alignItems: 'center',
 					}}>
-					{messages.map((message, index) => (
-						<div
-							key={index}
-							style={{
-								display: 'flex',
-								justifyContent:
-									message.role === 'assistant' ? 'flex-start' : 'flex-end',
-							}}>
-							<div
-								style={{
-									backgroundColor:
-										message.role === 'assistant' ? '#3f51b5' : '#f50057',
-									color: 'white',
-									borderRadius: '16px',
-									padding: '12px',
-									maxWidth: '80%',
-								}}>
-								{message.content}
-							</div>
-						</div>
-					))}
-				</div>
-				<div style={{ display: 'flex', gap: '16px' }}>
-					<input
-						type='text'
-						value={message}
-						onChange={(e) => setMessage(e.target.value)}
-						placeholder='Type your message...'
+					<div
 						style={{
-							flex: 1,
-							padding: '12px',
-							borderRadius: '8px',
-							border: '1px solid #ccc',
-						}}
-					/>
-					<button
-						onClick={sendMessage}
-						style={{
-							padding: '12px 24px',
-							borderRadius: '8px',
-							backgroundColor: '#007BFF',
-							color: 'white',
-							border: 'none',
-							cursor: 'pointer',
+							width: '500px',
+							height: '700px',
+							border: '1px solid black',
+							padding: '16px',
+							display: 'flex',
+							flexDirection: 'column',
+							gap: '24px',
 						}}>
-						Send
-					</button>
+						<div
+							style={{
+								flexGrow: 1,
+								overflowY: 'auto',
+								maxHeight: '100%',
+								display: 'flex',
+								flexDirection: 'column',
+								gap: '16px',
+							}}>
+							{messages.map((message, index) => (
+								<div
+									key={index}
+									style={{
+										display: 'flex',
+										justifyContent:
+											message.role === 'assistant' ? 'flex-start' : 'flex-end',
+									}}>
+									<div
+										style={{
+											backgroundColor:
+												message.role === 'assistant' ? '#3f51b5' : '#f50057',
+											color: 'white',
+											borderRadius: '16px',
+											padding: '12px',
+											maxWidth: '80%',
+										}}>
+										{message.content}
+									</div>
+								</div>
+							))}
+						</div>
+						<div style={{ display: 'flex', gap: '16px' }}>
+							<input
+								type='text'
+								value={message}
+								onChange={(e) => setMessage(e.target.value)}
+								placeholder='Type your message...'
+								style={{
+									flex: 1,
+									padding: '12px',
+									borderRadius: '8px',
+									border: '1px solid #ccc',
+								}}
+							/>
+							<button
+								onClick={sendMessage}
+								style={{
+									padding: '12px 24px',
+									borderRadius: '8px',
+									backgroundColor: '#007BFF',
+									color: 'white',
+									border: 'none',
+									cursor: 'pointer',
+								}}>
+								Send
+							</button>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 
