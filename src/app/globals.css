@@ -47,11 +47,11 @@
   @apply flex flex-col
 }
 .title{
-  @apply text-2xl font-bold;
+  @apply text-xl lg:text-2xl font-bold;
   
 }
 .description{
-  @apply text-xl leading-10 mb-3;
+  @apply lg:text-xl leading-10 mb-3;
   font-family: 'Pirata One', cursive;
 }
 .btnHero{
@@ -64,6 +64,10 @@
   .btnHero{
     width:50%;
     font-size:14px;
+  }
+  .glass{
+    width:100%;
+    @apply mx-2
   }
 }
 

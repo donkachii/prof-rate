@@ -12,7 +12,7 @@ const Nav = () => {
 		setOpen(!open);
 	}
 	return (
-		<header className='p-1 shadow-2xl bg-red-800'>
+		<header className='p-2 lg:p-1 shadow-2xl bg-red-800'>
 			<div className='flex justify-between items-center max-w-6xl mx-auto w-full flex-wrap'>
 				<Link href='/'>
 					<h1 className='navHead'>
