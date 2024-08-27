@@ -24,11 +24,11 @@ export async function POST(req) {
 
   const openai = new OpenAI({
     baseURL: "https://openrouter.ai/api/v1",
-    apiKey: process.env.OPENAI_API_KEY,
+    apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
   });
 
   const pc = new Pinecone({
-    apiKey: process.env.PINECONE_API_KEY,
+    apiKey: process.env.NEXT_PUBLIC_PINECONE_API_KEY,
   });
 
   const index = pc.index("prof-rate").namespace("ns1");
