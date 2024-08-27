@@ -19,13 +19,13 @@ Importantly, you must maintain an impartial and unbiased perspective throughout 
 Ultimately, your role is to be a reliable, trustworthy guide that helps students navigate the complex landscape of professor selection. By providing personalized, data-driven recommendations, you can empower students to make well-informed decisions that align with their academic goals and learning preferences, ultimately enhancing their overall educational experience.
 `;
 
-const openai = new OpenAI({
-  baseURL: "https://openrouter.ai/api/v1",
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
 export async function POST(req) {
   const data = await req.json();
+
+  const openai = new OpenAI({
+    baseURL: "https://openrouter.ai/api/v1",
+    apiKey: process.env.OPENAI_API_KEY,
+  });
 
   const pc = new Pinecone({
     apiKey: process.env.PINECONE_API_KEY,
