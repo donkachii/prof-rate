@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { Pinecone } from "@pinecone-database/pinecone";
 import OpenAI from "openai";
-import { Readable } from "stream"; 
+import { Readable } from "stream";
 
 const systemPrompt = `
 You are an advanced AI system designed to help university students navigate the complex world of professor selection and course planning. Your primary mission is to provide personalized, data-driven recommendations that empower students to make informed decisions about their academic journeys.
@@ -19,33 +19,36 @@ Importantly, you must maintain an impartial and unbiased perspective throughout 
 Ultimately, your role is to be a reliable, trustworthy guide that helps students navigate the complex landscape of professor selection. By providing personalized, data-driven recommendations, you can empower students to make well-informed decisions that align with their academic goals and learning preferences, ultimately enhancing their overall educational experience.
 `;
 
+const openai = new OpenAI({
+  baseURL: "https://openrouter.ai/api/v1",
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
 export async function POST(req) {
   const data = await req.json();
-  
+
   const pc = new Pinecone({
-      apiKey: process.env.PINECONE_API_KEY,
+    apiKey: process.env.PINECONE_API_KEY,
   });
 
-  const index = pc.index('rag').namespace('ns1'); 
-  const openai = new OpenAI({
-      apiKey: process.env.OPENROUTER_API_KEY, 
-  });
+  const index = pc.index("prof-rate").namespace("ns1");
 
   const text = data[data.length - 1].content;
   const embedding = await openai.embeddings.create({
-      model: 'text-embedding-ada-002', 
-      input: text,
+    model: "multilingual-e5-large",
+    input: text,
   });
 
   const results = await index.query({
-      topK: 3,
-      includeMetadata: true,
-      vector: embedding.data[0].embedding,
+    topK: 3,
+    includeMetadata: true,
+    vector: embedding.data[0].embedding,
   });
 
-  let resultString = '\n\n Returned results from vector db(done automatically):';
+  let resultString =
+    "\n\n Returned results from vector db(done automatically):";
   results.matches.forEach((match) => {
-      resultString += `
+    resultString += `
       Professor: ${match.id}
       Review: ${match.metadata.review}
       Subject: ${match.metadata.subject}
@@ -55,32 +58,32 @@ export async function POST(req) {
   const lastMessageContent = data[data.length - 1].content + resultString;
   const lastDataWithoutLastMessage = data.slice(0, data.length - 1);
   const completion = await openai.chat.completions.create({
-      messages: [
-          { role: 'system', content: systemPrompt },
-          ...lastDataWithoutLastMessage,
-          { role: 'user', content: lastMessageContent },
-      ],
-      model: 'openai/gpt-3.5-turbo',
-      stream: true,
+    messages: [
+      { role: "system", content: systemPrompt },
+      ...lastDataWithoutLastMessage,
+      { role: "user", content: lastMessageContent },
+    ],
+    model: "openai/gpt-3.5-turbo",
+    stream: true,
   });
 
   const stream = new ReadableStream({
-      async start(controller) {
-          const encoder = new TextEncoder();
-          try {
-              for await (const chunk of completion) {
-                  const content = chunk.choices[0]?.delta?.content;
-                  if (content) {
-                      const text = encoder.encode(content);
-                      controller.enqueue(text);
-                  }
-              }
-          } catch (err) {
-              controller.error(err);
-          } finally {
-              controller.close();
+    async start(controller) {
+      const encoder = new TextEncoder();
+      try {
+        for await (const chunk of completion) {
+          const content = chunk.choices[0]?.delta?.content;
+          if (content) {
+            const text = encoder.encode(content);
+            controller.enqueue(text);
           }
-      },
+        }
+      } catch (err) {
+        controller.error(err);
+      } finally {
+        controller.close();
+      }
+    },
   });
 
   return new NextResponse(stream);
